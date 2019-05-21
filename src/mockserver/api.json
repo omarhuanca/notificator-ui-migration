@@ -1,0 +1,12 @@
+{
+  "greettings": [
+    {"id": "BO", "country": "Bolivia", "greetting": "Hola"},
+    {"id": "BR", "country": "Brazil", "greetting": "Olá"},
+    {"id": "BS", "country": "Bahamas", "greetting": "Hello"},
+    {"id": "BT", "country":  "Bhutan", "greetting": "Kuzu zangpo"},
+    {"id": "BV", "country":  "Bouvet Island", "greetting": "Hello"},
+    {"id": "BW", "country":  "Botswana", "greetting": "Dumela"},
+    {"id": "BY", "country":  "Belarus", "greetting": "Вітаю"},
+    {"id": "BZ", "country":  "Belize", "greetting": "Hello"}
+  ]
+}
