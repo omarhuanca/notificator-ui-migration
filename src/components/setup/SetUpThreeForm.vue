@@ -53,7 +53,7 @@
                     </v-flex>
                     <v-flex xs6>
                       <v-autocomplete background-color="primary-50" v-model="listModel" placeholder="MSISDNS Test" label="MSISDNS Test *"
-                            :items="updateList" :multiple="multiple" item-text="msisdns_test" box
+                            :items="updateList" :multiple="multiple" item-text="name" box
                             item-value="name" height="56px" :error-messages="testError"
                             chips return-object>
                         <template slot="selection" slot-scope="props">
@@ -65,7 +65,7 @@
                     </v-flex>
                     <v-flex xs6>
                       <v-autocomplete background-color="primary-50" v-model="paquetigos" placeholder="Paquetigos" label="Paquetigos *"
-                            :items="updatePaquetigo" :multiple="multiple" item-text="paquetigos" box
+                            :items="updatePaquetigo" :multiple="multiple" item-text="name" box
                             item-value="name" height="56px" :error-messages="paquetigoError"
                             chips return-object>
                         <template slot="selection" slot-scope="props">
