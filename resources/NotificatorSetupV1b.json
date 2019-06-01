@@ -1,0 +1,74 @@
+{
+  "name": "Tareas Programadas",
+  "version": 1.0,
+  "modules": {
+    "notificator": {
+      "name": "NOTIFICADOR",
+      "scheduling": [//dinamico, el usuario puede añadir o remover mas 'scheduling'
+        {
+          "start_time": "21:00:00", // Validacion: menor a endTime
+          "end_time": "23:59:59", // Validacion: mayor a StartTime
+          "add_expiration_time_to_end_date": "00:10:00",
+          "ftp_file": "whitelist_{aaaammdd}_015500.csv", // Siempre debe tener '{aaaammdd}' al principio, medio y/o final
+          "throttling": {
+            "ftp": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            },
+            "hpd": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            },
+            "sms": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            }
+          }
+        },
+        {// las nuevas horas no deben estar en rangos que ya existen
+          "start_time": "22:00:00",
+          "end_time": "22:30:00",
+          "expiration_time_limit": "00:10:00",
+          "ftp_file": "whitelist_{aaaammdd}_015500.csv",
+          "throttling": {
+            "ftp": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            },
+            "hpd": {
+              "maximum_request_quota": 40,
+              "restore_time_in_seconds": 1
+            },
+            "sms": {
+              "maximum_request_quota": 50,
+              "restore_time_in_seconds": 1
+            }
+          }
+        }
+      ]
+    },
+    "conciliator": {
+      "name": "CONCILIADOR DWH",
+      "scheduling": [
+        {
+          "start_time": "21:00:00",
+          "end_time": null,
+          "throttling": {
+            "list": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            },
+            "add": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            },
+            "delete": {
+              "maximum_request_quota": 11,
+              "restore_time_in_seconds": 1
+            }
+          }
+        }
+      ]
+    }
+  }
+}

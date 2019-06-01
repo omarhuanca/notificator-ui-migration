@@ -1,0 +1,35 @@
+{
+  "name": "Configuracion de entorno",
+  "version": 1.0,
+  "modules": {
+    "notificator": {
+      "name": "NOTIFICADOR",
+      "ftp": {
+        "test_mode": true,
+        "wait_time_in_milliseconds": 50,
+        "ok_rate": 100,
+        "total_msisdn": 10000
+      },
+      "hpd": {
+        "test_mode": true,
+        "wait_time_in_milliseconds": 50,
+        "ok_rate": 90,
+        "add_expiration_time_in_minutes": 1,
+        "max_credit": 20,
+        "msisdns_test": ["101", "102", "103", "104"],
+        "paquetigos": ["PAQ-1", "PAQ-7", "PAQ-15", "PAQ-30"]
+      },
+      "sms": {
+        "test_mode": true,
+        "wait_time_in_milliseconds": 50,
+        "ok_rate": 90
+      }
+    },
+    "conciliator": { // ignorar todo el bloque para formularios, solo en el template tal como se lo ve
+      "name": "CONCILIADOR DWH",
+      "list": null,
+      "add": null,
+      "delete": null
+    }
+  }
+}

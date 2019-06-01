@@ -1,0 +1,142 @@
+{
+  "name": "Notificator Setup",
+  "version": 1.0,
+  "modules": {
+    "notificator": {
+      "name": "NOTIFICADOR",
+      "sms_config": {
+        "sms_template": "Sr. Cliente, el plan {%ID%} vencera en fecha {%EXPDATE%}.",
+        "add_expiration_time_to_end_date": "00:10:00",
+        "paquetigos": ["PAQ-1", "PAQ-7", "PAQ-15", "PAQ-30"]
+      },
+      "services": {
+        "ftp": {
+          "name": "FTP",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "",
+          "username": "user",
+          "password": "pass",
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        },
+        "hpd": {
+          "name": "HPD",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "",
+          "username": "user",
+          "password": "pass",
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        },
+        "sms": {
+          "name": "SMS",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "",
+          "username": "user",
+          "password": "pass",
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        }
+      }
+    },
+    "conciliator": {
+      "name": "CONCILIADOR DWH",
+      "queries": {
+        "query01": {
+          "description": "1.- Lista de numeros",
+          "sql": "SELECT CURRENT_TIMESTAMP;"
+        },
+        "query02": {
+          "description": "2.- Lista de numeros",
+          "sql": "SELECT CURRENT_TIMESTAMP;"
+        },
+        "query03": {
+          "description": "3.- Lista de numeros",
+          "sql": "SELECT CURRENT_TIMESTAMP;"
+        },
+        "query04": {
+          "description": "4.- Lista de numeros",
+          "sql": ""
+        }
+      },
+      "services": {
+        "list": {
+          "name": "LIST",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "GET",
+          "username": "user",
+          "password": "pass",
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        },
+        "add": {
+          "name": "ADD",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "POST",
+          "username": "user",
+          "password": "pass",
+          "numberRetries": 4,
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        },
+        "delete": {
+          "name": "DELETE",
+          "host": "localhost",
+          "port": 100,
+          "request_method": "POST",
+          "username": "user",
+          "password": "pass",
+          "retry": {
+            "maximum_retries": 4,
+            "error_wait_time_in_milliseconds": 1,
+            "bussy_wait_time_in_milliseconds": 1
+          },
+          "throttling": {
+            "maximum_request_quota": 11,
+            "restore_time_in_seconds": 1
+          }
+        }
+      }
+    }
+  }
+}
